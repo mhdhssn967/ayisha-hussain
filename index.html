@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hussain &amp; Ayisha, 3 January 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#06231d;--bg2:#0d3d32;--gold:#e6c36a;--gold2:#b98f2e;--ivory:#f7efd9;--rose:#e9b8a6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(ellipse at 50% 0,var(--bg2),var(--bg) 70%) fixed;color:var(--ivory);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.6;overflow-x:hidden}
+body.locked{overflow:hidden;height:100vh}
+#fx{position:fixed;inset:0;z-index:1;pointer-events:none}
+main{position:relative;z-index:2}
+section{padding:90px 24px;max-width:960px;margin:0 auto;text-align:center}
+h2{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(40px,8vw,64px);color:var(--gold);line-height:1.1;margin-bottom:28px}
+p{max-width:34em;margin:0 auto}
+.script{font-family:'Great Vibes',cursive}
+.gold{color:var(--gold)}
+.orn{display:flex;align-items:center;gap:14px;justify-content:center;color:var(--gold);margin:22px auto;max-width:320px}
+.orn:before,.orn:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.orn:after{transform:scaleX(-1)}
+
+/* intro doors */
+#intro{position:fixed;inset:0;z-index:50;display:grid;place-items:center}
+.door{position:absolute;top:0;bottom:0;width:50.2%;background:
+ radial-gradient(circle at 50% 50%,transparent 0 22px,rgba(230,195,106,.12) 23px 24px,transparent 25px) 0 0/64px 64px,
+ linear-gradient(180deg,#0a3429,#05201a);transition:transform 1.5s cubic-bezier(.77,0,.18,1)}
+.door.l{left:0;border-right:2px solid var(--gold)}
+.door.r{right:0;border-left:2px solid var(--gold)}
+#intro.open .l{transform:translateX(-102%)}
+#intro.open .r{transform:translateX(102%)}
+.invite{position:relative;z-index:2;text-align:center;transition:opacity .6s,transform 1.2s}
+#intro.open .invite{opacity:0;transform:scale(2.2)}
+.invite small{display:block;font-size:22px;font-style:italic;color:var(--gold);margin-bottom:20px}
+#seal{width:128px;height:128px;border-radius:50%;border:0;cursor:pointer;color:#4a0f1c;font:400 54px/1 'Great Vibes',cursive;background:radial-gradient(circle at 35% 30%,#d94a63,#8e1530 60%,#5c0c1e);box-shadow:0 0 0 6px rgba(142,21,48,.35),0 10px 40px rgba(0,0,0,.6);animation:pulse 2.4s infinite;color:#ffd9de}
+#seal:focus-visible{outline:3px solid var(--gold);outline-offset:6px}
+@keyframes pulse{50%{box-shadow:0 0 0 18px rgba(217,74,99,0),0 10px 40px rgba(0,0,0,.6),0 0 60px rgba(217,74,99,.5)}}
+.invite .hint{margin-top:22px;font-size:18px;opacity:.8}
+
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding-top:60px}
+.bism{font-size:30px;color:var(--gold);direction:rtl;margin-bottom:6px;opacity:0;transition:opacity 2s 1.4s}
+body.go .bism,body.go .fade{opacity:1}
+.fade{opacity:0;transition:opacity 1.6s}
+.names{font-family:'Great Vibes',cursive;font-size:clamp(58px,15vw,128px);line-height:1.05;color:var(--gold);text-shadow:0 0 40px rgba(230,195,106,.35);margin:8px 0}
+.names .nm{display:block}
+.names span.l{display:inline-block;opacity:0;transform:translateY(40px) rotate(8deg) scale(.7);filter:blur(8px)}
+body.go .names span.l{animation:li 1s cubic-bezier(.2,.9,.2,1) forwards;animation-delay:calc(var(--i)*.1s + .9s)}
+@keyframes li{to{opacity:1;transform:none;filter:none}}
+.amp{display:block;font-size:.5em;color:var(--rose);opacity:0;transition:opacity 1s 2s}
+body.go .amp{opacity:1}
+.date{font-size:clamp(24px,5vw,34px);letter-spacing:.06em;margin-top:6px}
+.cue{margin-top:30px;color:var(--gold);animation:bob 2s infinite;font-size:14px;opacity:.8}
+@keyframes bob{50%{transform:translateY(8px)}}
+
+/* photo slots */
+.slot{display:block;position:relative;overflow:hidden;cursor:pointer;border:2px solid var(--gold);background:repeating-linear-gradient(45deg,rgba(230,195,106,.08) 0 12px,rgba(230,195,106,.03) 12px 24px);transition:transform .15s,box-shadow .4s;box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.slot:hover,.slot:focus-within{box-shadow:0 18px 60px rgba(230,195,106,.25)}
+.slot input{position:absolute;opacity:0;pointer-events:none}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.slot.has img{display:block}
+.slot.has .ph{display:none}
+.ph{position:absolute;inset:0;display:grid;place-content:center;gap:6px;text-align:center;color:var(--gold);font-size:18px}
+.ph b{font:400 40px 'Great Vibes',cursive}
+.arch{width:min(74vw,300px);aspect-ratio:3/4;border-radius:999px 999px 8px 8px;margin:34px auto 0;animation:float 6s ease-in-out infinite}
+@keyframes float{50%{translate:0 -10px}}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.grid3 .slot{aspect-ratio:4/5;border-radius:14px}
+.grid3 .slot:nth-child(2){border-radius:999px 999px 14px 14px}
+
+/* countdown */
+.cd{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.cd div{width:92px;padding:16px 0;border:1px solid var(--gold2);border-radius:10px;background:rgba(0,0,0,.18)}
+.cd b{display:block;font-size:42px;font-weight:600;color:var(--gold);line-height:1}
+.cd b.pop{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.25);color:#fff}}
+.cd span{font-size:16px;opacity:.8}
+
+/* details */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;text-align:center}
+.card{padding:34px 22px;border:1px solid var(--gold2);border-radius:120px 120px 14px 14px;background:linear-gradient(180deg,rgba(230,195,106,.1),rgba(0,0,0,.15))}
+.card h3{font:400 36px 'Great Vibes',cursive;color:var(--gold)}
+.card strong{display:block;font-size:26px;font-weight:600;margin:6px 0}
+
+/* buttons, form */
+.btn{font:600 19px 'Cormorant Garamond',Georgia,serif;color:#1b1405;background:linear-gradient(135deg,#f3d98b,var(--gold2));border:0;border-radius:40px;padding:13px 30px;cursor:pointer;margin:8px;position:relative;overflow:hidden;text-decoration:none;display:inline-block;transition:transform .2s,box-shadow .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(230,195,106,.35)}
+.btn:focus-visible,input[type=text]:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn.ghost{background:none;color:var(--gold);border:1px solid var(--gold)}
+input[type=text]{font:inherit;width:min(100%,360px);padding:13px 20px;border-radius:40px;border:1px solid var(--gold2);background:rgba(0,0,0,.25);color:var(--ivory);text-align:center;margin:8px}
+#toast{margin-top:18px;min-height:30px;color:var(--rose);font-style:italic}
+footer{padding:60px 24px 90px;text-align:center;color:var(--gold)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body class="locked">
+
+<canvas id="fx"></canvas>
+
+<div id="intro">
+  <div class="door l"></div><div class="door r"></div>
+  <div class="invite">
+    <small>You are invited</small>
+    <button id="seal" aria-label="Open the invitation">H&amp;A</button>
+    <div class="hint">Tap the seal to open</div>
+  </div>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="bism" lang="ar">بسم الله الرحمن الرحيم</div>
+    <p class="fade">With the blessings of Allah and our families, we invite you to the nikkah of</p>
+    <h1 class="names" aria-label="Hussain and Ayisha">
+      <span class="nm" data-t="Hussain"></span>
+      <span class="amp">&amp;</span>
+      <span class="nm" data-t="Ayisha"></span>
+    </h1>
+    <div class="date fade" style="transition-delay:2.6s">Sunday, 3 January 2027</div>
+    <label class="slot arch" id="heroSlot" data-k="hero" title="Add your photo">
+      <input type="file" accept="image/*"><img alt="Hussain and Ayisha">
+      <div class="ph"><b>Add photo</b>Click or drop an image</div>
+    </label>
+    <div class="cue">Scroll down</div>
+  </section>
+
+  <section>
+    <h2>Counting the days</h2>
+    <div class="cd" id="cd">
+      <div><b>0</b><span>days</span></div><div><b>0</b><span>hours</span></div>
+      <div><b>0</b><span>minutes</span></div><div><b>0</b><span>seconds</span></div>
+    </div>
+    <p id="cdmsg" style="margin-top:26px;font-style:italic"></p>
+  </section>
+
+  <section>
+    <h2>The day</h2>
+    <div class="cards">
+      <div class="card"><h3>Nikkah</h3><strong>11:00 AM</strong><p>Sunday, 3 January 2027. Please be seated by 10:45.</p></div>
+      <div class="card"><h3>Feast</h3><strong>1:00 PM</strong><p>Lunch with both families, right after the nikkah.</p></div>
+      <div class="card"><h3>Venue</h3><strong>Al Noor Auditorium</strong><p>Edappally, Kochi, Kerala 682024</p></div>
+    </div>
+    <div style="margin-top:34px">
+      <a class="btn" id="map" target="_blank" rel="noopener">Open in Maps</a>
+      <button class="btn ghost" id="ics">Add to calendar</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our moments</h2>
+    <div class="grid3">
+      <label class="slot" data-k="g1"><input type="file" accept="image/*"><img alt="Photo 1"><div class="ph"><b>Photo</b>Click or drop</div></label>
+      <label class="slot" data-k="g2"><input type="file" accept="image/*"><img alt="Photo 2"><div class="ph"><b>Photo</b>Click or drop</div></label>
+      <label class="slot" data-k="g3"><input type="file" accept="image/*"><img alt="Photo 3"><div class="ph"><b>Photo</b>Click or drop</div></label>
+    </div>
+  </section>
+
+  <section>
+    <h2>Will you join us?</h2>
+    <p>Your presence and your duas would mean the world to us. Tell us you're coming and we'll save you a seat.</p>
+    <div class="orn">✦</div>
+    <input type="text" id="guest" placeholder="Your name" aria-label="Your name" maxlength="40"><br>
+    <button class="btn" id="yes">I'll be there</button>
+    <button class="btn ghost" id="no">Sorry, I can't make it</button>
+    <div id="toast" role="status"></div>
+  </section>
+
+  <footer>
+    <div class="script" style="font-size:44px">Hussain &amp; Ayisha</div>
+    <p style="margin-top:6px">3 January 2027, with love and the blessings of our families.</p>
+  </footer>
+</main>
+
+<script>
+/* ===== Edit these ===== */
+const CONFIG={
+  date:"2027-01-03T11:00:00+05:30",
+  venue:"Al Noor Auditorium, Edappally, Kochi, Kerala 682024",
+  whatsapp:"919000000000",            // country code + number, no + or spaces
+  images:{hero:"",g1:"",g2:"",g3:""}  // e.g. hero:"images/us.jpg" to show photos by default
+};
+/* ====================== */
+const $=s=>document.querySelector(s);
+
+/* name letters */
+document.querySelectorAll('.nm').forEach((el,n)=>{
+  el.innerHTML=[...el.dataset.t].map((c,i)=>`<span class="l" style="--i:${i+n*7}" aria-hidden="true">${c}</span>`).join('');
+});
+
+/* sparkles, petals and confetti */
+const cv=$('#fx'),x=cv.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let W,H,P=[],mx=-999,my=-999;
+const cols=['#e6c36a','#f3d98b','#e9b8a6','#f7efd9','#d94a63'];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
+const R=(a,b)=>a+Math.random()*(b-a);
+function petal(){return{x:R(0,W),y:R(-H,0),r:R(3,7),vx:R(-.3,.3),vy:R(.5,1.3),a:R(0,6.3),va:R(-.03,.03),c:cols[Math.floor(R(0,3))],t:R(0,99),b:0}}
+if(!reduce)for(let i=0;i<55;i++){const p=petal();p.y=R(0,H);P.push(p)}
+function burst(bx,by,n=90){for(let i=0;i<n;i++){const s=R(3,12),d=R(0,6.28);P.push({x:bx,y:by,r:R(3,7),vx:Math.cos(d)*s,vy:Math.sin(d)*s-5,a:R(0,6),va:R(-.3,.3),c:cols[Math.floor(R(0,5))],t:0,b:1,life:1})}}
+(function loop(){
+  x.clearRect(0,0,W,H);
+  for(let i=P.length-1;i>=0;i--){
+    const p=P[i];p.t+=.02;p.a+=p.va;
+    if(p.b){p.vy+=.28;p.vx*=.985;p.life-=.011;if(p.life<=0){P.splice(i,1);continue}}
+    else{p.vx+=Math.sin(p.t)*.01;const dx=p.x-mx,dy=p.y-my,d=Math.hypot(dx,dy);if(d<110){p.x+=dx/d*3;p.y+=dy/d*3}
+      if(p.y>H+10){Object.assign(p,petal(),{y:-10})}}
+    p.x+=p.vx;p.y+=p.vy;
+    x.save();x.globalAlpha=p.b?p.life:.75;x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;
+    x.beginPath();x.ellipse(0,0,p.r,p.r*.55,0,0,6.28);x.fill();x.restore();
+  }
+  requestAnimationFrame(loop);
+})();
+
+/* open the doors */
+$('#seal').onclick=()=>{
+  $('#intro').classList.add('open');document.body.classList.remove('locked');
+  burst(innerWidth/2,innerHeight/2,70);
+  setTimeout(()=>document.body.classList.add('go'),500);
+  setTimeout(()=>$('#intro').remove(),1900);
+};
+
+/* photo slots: click or drop to preview, or set CONFIG.images */
+document.querySelectorAll('.slot').forEach(s=>{
+  const inp=s.querySelector('input'),im=s.querySelector('img'),def=CONFIG.images[s.dataset.k];
+  const show=src=>{im.src=src;s.classList.add('has')};
+  if(def)show(def);
+  const load=f=>{if(!f||!f.type.startsWith('image/'))return;const r=new FileReader();r.onload=()=>show(r.result);r.readAsDataURL(f)};
+  inp.onchange=()=>load(inp.files[0]);
+  s.ondragover=e=>e.preventDefault();
+  s.ondrop=e=>{e.preventDefault();load(e.dataTransfer.files[0])};
+});
+/* hero photo leans toward the pointer */
+const hs=$('#heroSlot');
+hs.addEventListener('pointermove',e=>{const b=hs.getBoundingClientRect(),px=(e.clientX-b.left)/b.width-.5,py=(e.clientY-b.top)/b.height-.5;hs.style.transform=`perspective(700px) rotateY(${px*14}deg) rotateX(${-py*14}deg)`});
+hs.addEventListener('pointerleave',()=>hs.style.transform='');
+
+/* countdown */
+const T=new Date(CONFIG.date).getTime(),nums=[...document.querySelectorAll('#cd b')];
+function tick(){
+  let d=Math.max(0,T-Date.now());
+  const v=[Math.floor(d/864e5),Math.floor(d/36e5)%24,Math.floor(d/6e4)%60,Math.floor(d/1e3)%60];
+  v.forEach((n,i)=>{if(nums[i].textContent!=n){nums[i].textContent=n;nums[i].classList.remove('pop');void nums[i].offsetWidth;nums[i].classList.add('pop')}});
+  $('#cdmsg').textContent=d?"Until we say qubool.":"Today is the day. Alhamdulillah!";
+}
+tick();setInterval(tick,1000);
+
+/* map + calendar */
+$('#map').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(CONFIG.venue);
+$('#ics').onclick=()=>{
+  const s=new Date(CONFIG.date),f=d=>d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z',e=new Date(+s+4*36e5);
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','SUMMARY:Nikkah of Hussain & Ayisha','DTSTART:'+f(s),'DTEND:'+f(e),'LOCATION:'+CONFIG.venue,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='hussain-ayisha-nikkah.ics';a.click();
+};
+
+/* RSVP opens WhatsApp with a ready message */
+function rsvp(ok,ev){
+  const n=$('#guest').value.trim();
+  if(!n){$('#toast').textContent='Please enter your name first.';$('#guest').focus();return}
+  const msg=ok?`Assalamu alaikum! This is ${n}. I'll be at the nikkah on 3 January. Congratulations!`:`Assalamu alaikum! This is ${n}. I can't make it on 3 January, but you have my duas.`;
+  $('#toast').textContent=ok?`Wonderful, ${n}. See you on the 3rd!`:`We'll miss you, ${n}. Thank you for your duas.`;
+  if(ok){const b=ev.target.getBoundingClientRect();burst(b.left+b.width/2,b.top,110)}
+  setTimeout(()=>window.open('https://wa.me/'+CONFIG.whatsapp+'?text='+encodeURIComponent(msg),'_blank'),900);
+}
+$('#yes').onclick=e=>rsvp(true,e);$('#no').onclick=e=>rsvp(false,e);
+</script>
+</body>
+</html>
