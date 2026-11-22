@@ -4,19 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Hussain &amp; Ayisha, 3 January 2027</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Corinthia&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#06231d;--bg2:#0d3d32;--gold:#e6c36a;--gold2:#b98f2e;--ivory:#f7efd9;--rose:#e9b8a6}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+::backdrop{background:var(--bg)}
+html:fullscreen,html:-webkit-full-screen{background:var(--bg)}
 body{background:radial-gradient(ellipse at 50% 0,var(--bg2),var(--bg) 70%) fixed;color:var(--ivory);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.6;overflow-x:hidden}
 body.locked{overflow:hidden;height:100vh}
 #fx{position:fixed;inset:0;z-index:1;pointer-events:none}
 main{position:relative;z-index:2}
 section{padding:90px 24px;max-width:960px;margin:0 auto;text-align:center}
-h2{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(40px,8vw,64px);color:var(--gold);line-height:1.1;margin-bottom:28px}
+h2{font-family:'Corinthia',cursive;font-weight:400;font-size:clamp(48px,9.5vw,76px);color:var(--gold);line-height:1.1;margin-bottom:28px}
 p{max-width:34em;margin:0 auto}
-.script{font-family:'Great Vibes',cursive}
+.script{font-family:'Corinthia',cursive}
 .gold{color:var(--gold)}
 .orn{display:flex;align-items:center;gap:14px;justify-content:center;color:var(--gold);margin:22px auto;max-width:320px}
 .orn:before,.orn:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
@@ -34,7 +36,8 @@ p{max-width:34em;margin:0 auto}
 .invite{position:relative;z-index:2;text-align:center;transition:opacity .6s,transform 1.2s}
 #intro.open .invite{opacity:0;transform:scale(2.2)}
 .invite small{display:block;font-size:22px;font-style:italic;color:var(--gold);margin-bottom:20px}
-#seal{width:128px;height:128px;border-radius:50%;border:0;cursor:pointer;color:#4a0f1c;font:400 54px/1 'Great Vibes',cursive;background:radial-gradient(circle at 35% 30%,#d94a63,#8e1530 60%,#5c0c1e);box-shadow:0 0 0 6px rgba(142,21,48,.35),0 10px 40px rgba(0,0,0,.6);animation:pulse 2.4s infinite;color:#ffd9de}
+#seal{width:128px;height:128px;border-radius:50%;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:3px;font:600 36px/1 'Cormorant Garamond',Georgia,serif;color:#ffd9de;text-shadow:0 1px 2px rgba(74,15,28,.55);background:radial-gradient(circle at 35% 30%,#d94a63,#8e1530 60%,#5c0c1e);box-shadow:0 0 0 6px rgba(142,21,48,.35),0 10px 40px rgba(0,0,0,.6);animation:pulse 2.4s infinite}
+#seal span{font-style:italic;font-weight:400;font-size:.82em;line-height:1}
 #seal:focus-visible{outline:3px solid var(--gold);outline-offset:6px}
 @keyframes pulse{50%{box-shadow:0 0 0 18px rgba(217,74,99,0),0 10px 40px rgba(0,0,0,.6),0 0 60px rgba(217,74,99,.5)}}
 .invite .hint{margin-top:22px;font-size:18px;opacity:.8}
@@ -44,7 +47,7 @@ p{max-width:34em;margin:0 auto}
 .bism{font-size:30px;color:var(--gold);direction:rtl;margin-bottom:6px;opacity:0;transition:opacity 2s 1.4s}
 body.go .bism,body.go .fade{opacity:1}
 .fade{opacity:0;transition:opacity 1.6s}
-.names{font-family:'Great Vibes',cursive;font-size:clamp(58px,15vw,128px);line-height:1.05;color:var(--gold);text-shadow:0 0 40px rgba(230,195,106,.35);margin:8px 0}
+.names{font-family:'Corinthia',cursive;font-weight:400;font-size:clamp(68px,17vw,148px);line-height:1.05;color:var(--gold);text-shadow:0 0 40px rgba(230,195,106,.35);margin:8px 0}
 .names .nm{display:block}
 .names span.l{display:inline-block;opacity:0;transform:translateY(40px) rotate(8deg) scale(.7);filter:blur(8px)}
 body.go .names span.l{animation:li 1s cubic-bezier(.2,.9,.2,1) forwards;animation-delay:calc(var(--i)*.1s + .9s)}
@@ -63,7 +66,7 @@ body.go .amp{opacity:1}
 .slot.has img{display:block}
 .slot.has .ph{display:none}
 .ph{position:absolute;inset:0;display:grid;place-content:center;gap:6px;text-align:center;color:var(--gold);font-size:18px}
-.ph b{font:400 40px 'Great Vibes',cursive}
+.ph b{font:400 48px 'Corinthia',cursive}
 .arch{width:min(74vw,300px);aspect-ratio:3/4;border-radius:999px 999px 8px 8px;margin:34px auto 0;animation:float 6s ease-in-out infinite}
 @keyframes float{50%{translate:0 -10px}}
 .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
@@ -81,7 +84,7 @@ body.go .amp{opacity:1}
 /* details */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;text-align:center}
 .card{padding:34px 22px;border:1px solid var(--gold2);border-radius:120px 120px 14px 14px;background:linear-gradient(180deg,rgba(230,195,106,.1),rgba(0,0,0,.15))}
-.card h3{font:400 36px 'Great Vibes',cursive;color:var(--gold)}
+.card h3{font:400 44px 'Corinthia',cursive;color:var(--gold)}
 .card strong{display:block;font-size:26px;font-weight:600;margin:6px 0}
 
 /* buttons, form */
@@ -92,6 +95,15 @@ body.go .amp{opacity:1}
 input[type=text]{font:inherit;width:min(100%,360px);padding:13px 20px;border-radius:40px;border:1px solid var(--gold2);background:rgba(0,0,0,.25);color:var(--ivory);text-align:center;margin:8px}
 #toast{margin-top:18px;min-height:30px;color:var(--rose);font-style:italic}
 footer{padding:60px 24px 90px;text-align:center;color:var(--gold)}
+#bgm{position:fixed;right:18px;bottom:max(18px,env(safe-area-inset-bottom));z-index:40;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold2);background:rgba(6,35,29,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--gold);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:opacity .6s,transform .2s,border-color .3s}
+#bgm:hover{transform:translateY(-2px);border-color:var(--gold)}
+#bgm:focus-visible{outline:3px solid #fff;outline-offset:3px}
+body.locked #bgm{opacity:0;pointer-events:none}
+#bgm svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+#bgm .off{display:none}
+#bgm.muted .on{display:none}
+#bgm.muted .off{display:block}
+#bgm.muted{opacity:.65}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
 </style>
 </head>
@@ -103,7 +115,7 @@ footer{padding:60px 24px 90px;text-align:center;color:var(--gold)}
   <div class="door l"></div><div class="door r"></div>
   <div class="invite">
     <small>You are invited</small>
-    <button id="seal" aria-label="Open the invitation">H&amp;A</button>
+    <button id="seal" aria-label="Open the invitation">H<span>&amp;</span>A</button>
     <div class="hint">Tap the seal to open</div>
   </div>
 </div>
@@ -167,10 +179,18 @@ footer{padding:60px 24px 90px;text-align:center;color:var(--gold)}
   </section>
 
   <footer>
-    <div class="script" style="font-size:44px">Hussain &amp; Ayisha</div>
+    <div class="script" style="font-size:52px">Hussain &amp; Ayisha</div>
     <p style="margin-top:6px">3 January 2027, with love and the blessings of our families.</p>
   </footer>
 </main>
+
+<button id="bgm" type="button" aria-label="Mute background music" aria-pressed="true" title="Mute / Unmute music">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M11 5L6 9H3v6h3l5 4V5z"/>
+    <path class="on" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/>
+    <path class="off" d="M16 9l5 6M21 9l-5 6"/>
+  </svg>
+</button>
 
 <script>
 /* ===== Edit these ===== */
@@ -178,6 +198,7 @@ const CONFIG={
   date:"2027-01-03T11:00:00+05:30",
   venue:"Al Noor Auditorium, Edappally, Kochi, Kerala 682024",
   whatsapp:"919000000000",            // country code + number, no + or spaces
+  music:"",                           // optional: e.g. "audio/music.mp3" to override the built-in Arabic ambiance
   images:{hero:"",g1:"",g2:"",g3:""}  // e.g. hero:"images/us.jpg" to show photos by default
 };
 /* ====================== */
@@ -192,7 +213,7 @@ document.querySelectorAll('.nm').forEach((el,n)=>{
 const cv=$('#fx'),x=cv.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 let W,H,P=[],mx=-999,my=-999;
 const cols=['#e6c36a','#f3d98b','#e9b8a6','#f7efd9','#d94a63'];
-function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);document.addEventListener('fullscreenchange',rs);document.addEventListener('webkitfullscreenchange',rs);
 addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
 const R=(a,b)=>a+Math.random()*(b-a);
 function petal(){return{x:R(0,W),y:R(-H,0),r:R(3,7),vx:R(-.3,.3),vy:R(.5,1.3),a:R(0,6.3),va:R(-.03,.03),c:cols[Math.floor(R(0,3))],t:R(0,99),b:0}}
@@ -212,8 +233,182 @@ function burst(bx,by,n=90){for(let i=0;i<n;i++){const s=R(3,12),d=R(0,6.28);P.pu
   requestAnimationFrame(loop);
 })();
 
+/* subtle Arabic Maqam Hijaz background music (Web Audio, or CONFIG.music file) */
+const BGM=(()=>{
+  const btn=$('#bgm');
+  const N={D2:73.42,A2:110,D3:146.83,A3:220,C4:261.63,D4:293.66,Eb4:311.13,Fs4:369.99,G4:392,A4:440,Bb4:466.16,C5:523.25,D5:587.33};
+  const SCORE=[
+    ['D4',1.35,.55,null,null,1],['Eb4',.65,.45],['Fs4',1.45,.62,'Eb4'],['G4',.85,.52],
+    ['Fs4',.75,.48],['Eb4',.7,.42],['D4',2.1,.58,null,'D4',1],[null,1.1,0],
+    ['Fs4',.75,.48,null,null,1],['G4',.75,.52],['A4',1.55,.65,'G4','A4'],['Bb4',.75,.5],
+    ['A4',.8,.54],['G4',.85,.48],['Fs4',.8,.45],['G4',1.85,.52,null,null,1],[null,1.2,0],
+    ['A4',.9,.55,null,null,1],['C5',1.15,.6],['Bb4',.8,.52],['A4',1.1,.56,null,'A4'],
+    ['G4',.75,.48],['Fs4',1.15,.54,'G4'],['Eb4',.8,.44],['Fs4',1.5,.5,null,null,1],[null,1.0,0],
+    ['G4',.8,.5,null,null,1],['Fs4',.8,.48],['Eb4',.95,.46],['D4',1.05,.52],
+    ['C4',.9,.42],['D4',2.8,.62,'C4','D4',1],[null,2.2,0]
+  ];
+  let ctx,master,dry,wet,noiseBuf,started=false,playing=false,muted=false,idx=0,timer=0,aud=null,usingFile=false;
+  const setUI=on=>{
+    btn.classList.toggle('muted',!on);
+    btn.setAttribute('aria-pressed',String(on));
+    btn.setAttribute('aria-label',on?'Mute background music':'Play background music');
+  };
+  function makeReverb(c){
+    const len=Math.floor(c.sampleRate*2.6),buf=c.createBuffer(2,len,c.sampleRate);
+    for(let ch=0;ch<2;ch++){
+      const d=buf.getChannelData(ch);let lp=0;
+      for(let i=0;i<len;i++){
+        const env=Math.pow(1-i/len,2.6);
+        lp+=.14*((Math.random()*2-1)-lp);
+        d[i]=lp*env;
+      }
+    }
+    const conv=c.createConvolver();conv.buffer=buf;return conv;
+  }
+  function makeNoise(c){
+    const len=c.sampleRate*2,buf=c.createBuffer(1,len,c.sampleRate),d=buf.getChannelData(0);
+    for(let i=0;i<len;i++)d[i]=Math.random()*2-1;
+    return buf;
+  }
+  function initSynth(){
+    if(ctx)return true;
+    const AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC){btn.style.display='none';return false}
+    ctx=new AC();
+    master=ctx.createGain();master.gain.value=.0001;
+    const tone=ctx.createBiquadFilter();tone.type='lowpass';tone.frequency.value=2600;tone.Q.value=.5;
+    dry=ctx.createGain();dry.gain.value=.68;
+    wet=ctx.createGain();wet.gain.value=.52;
+    const rev=makeReverb(ctx);
+    noiseBuf=makeNoise(ctx);
+    dry.connect(tone);wet.connect(rev);rev.connect(tone);tone.connect(master);master.connect(ctx.destination);
+    const dFilter=ctx.createBiquadFilter();dFilter.type='lowpass';dFilter.frequency.value=260;dFilter.Q.value=.7;
+    const dGain=ctx.createGain();dGain.gain.value=.13;
+    const lfo=ctx.createOscillator(),lfoG=ctx.createGain();
+    lfo.frequency.value=.07;lfoG.gain.value=.035;lfo.connect(lfoG);lfoG.connect(dGain.gain);lfo.start();
+    [[N.D2,'sine',.55,0],[N.A2,'sine',.32,2],[N.D3,'triangle',.22,-3]].forEach(([f,ty,g,det])=>{
+      const o=ctx.createOscillator(),og=ctx.createGain();
+      o.type=ty;o.frequency.value=f;o.detune.value=det;og.gain.value=g;
+      o.connect(og);og.connect(dFilter);o.start();
+    });
+    dFilter.connect(dGain);dGain.connect(dry);dGain.connect(wet);
+    return true;
+  }
+  function pluckOud(freq,dur,vel,slideFrom){
+    const t=ctx.currentTime+.02,end=t+Math.max(1.3,dur*1.25);
+    const f=ctx.createBiquadFilter();f.type='lowpass';
+    f.frequency.setValueAtTime(1650,t);f.frequency.exponentialRampToValueAtTime(340,t+.45);
+    const body=ctx.createBiquadFilter();body.type='peaking';body.frequency.value=320;body.gain.value=3.5;body.Q.value=1.2;
+    const env=ctx.createGain();
+    env.gain.setValueAtTime(.0001,t);env.gain.linearRampToValueAtTime(vel*.26,t+.014);
+    env.gain.exponentialRampToValueAtTime(.0008,end);env.gain.linearRampToValueAtTime(0,end+.04);
+    [0,4.5].forEach((det,k)=>{
+      const o=ctx.createOscillator(),og=ctx.createGain();
+      o.type=k?'sine':'triangle';o.detune.value=det;
+      if(slideFrom){o.frequency.setValueAtTime(slideFrom,t);o.frequency.exponentialRampToValueAtTime(freq,t+.06)}
+      else o.frequency.setValueAtTime(freq,t);
+      og.gain.value=k?.35:.65;
+      o.connect(og);og.connect(f);o.start(t);o.stop(end+.06);
+    });
+    const n=ctx.createBufferSource(),nf=ctx.createBiquadFilter(),ng=ctx.createGain();
+    n.buffer=noiseBuf;nf.type='bandpass';nf.frequency.value=1100;nf.Q.value=1.5;
+    ng.gain.setValueAtTime(vel*.05,t);ng.gain.exponentialRampToValueAtTime(.0001,t+.025);
+    n.connect(nf);nf.connect(ng);ng.connect(f);n.start(t);n.stop(t+.035);
+    f.connect(body);body.connect(env);env.connect(dry);env.connect(wet);
+  }
+  function playNey(freq){
+    const t=ctx.currentTime+.08,end=t+3.1;
+    const o=ctx.createOscillator(),o2=ctx.createOscillator(),g2=ctx.createGain(),env=ctx.createGain();
+    o.type='sine';o.frequency.value=freq;
+    o2.type='sine';o2.frequency.value=freq*2;g2.gain.value=.14;
+    const vib=ctx.createOscillator(),vibG=ctx.createGain();
+    vib.frequency.value=4.6;vibG.gain.value=3.2;vib.connect(vibG);vibG.connect(o.frequency);
+    env.gain.setValueAtTime(.0001,t);env.gain.linearRampToValueAtTime(.11,t+.65);
+    env.gain.setValueAtTime(.1,t+1.8);env.gain.exponentialRampToValueAtTime(.0005,end);
+    env.gain.linearRampToValueAtTime(0,end+.05);
+    const br=ctx.createBufferSource(),bf=ctx.createBiquadFilter(),bg=ctx.createGain();
+    br.buffer=noiseBuf;br.loop=true;bf.type='bandpass';bf.frequency.value=freq;bf.Q.value=9;bg.gain.value=.022;
+    br.connect(bf);bf.connect(bg);bg.connect(env);
+    o.connect(env);o2.connect(g2);g2.connect(env);env.connect(wet);
+    o.start(t);o2.start(t);vib.start(t);br.start(t);
+    o.stop(end+.07);o2.stop(end+.07);vib.stop(end+.07);br.stop(end+.07);
+  }
+  function playDaf(){
+    const t=ctx.currentTime+.02,end=t+.55;
+    const o=ctx.createOscillator(),f=ctx.createBiquadFilter(),env=ctx.createGain();
+    o.type='sine';o.frequency.setValueAtTime(98,t);o.frequency.exponentialRampToValueAtTime(52,t+.16);
+    f.type='lowpass';f.frequency.value=160;
+    env.gain.setValueAtTime(.0001,t);env.gain.linearRampToValueAtTime(.14,t+.012);
+    env.gain.exponentialRampToValueAtTime(.0005,end);env.gain.linearRampToValueAtTime(0,end+.03);
+    o.connect(f);f.connect(env);env.connect(dry);env.connect(wet);
+    o.start(t);o.stop(end+.05);
+  }
+  function step(){
+    if(!playing||muted||document.hidden)return;
+    const [note,dur,vel,slide,ney,dum]=SCORE[idx];
+    idx=(idx+1)%SCORE.length;
+    if(dum)playDaf();
+    if(note&&N[note])pluckOud(N[note],dur,vel,slide?N[slide]:0);
+    if(ney&&N[ney])playNey(N[ney]);
+    const jitter=(Math.random()-.5)*45;
+    timer=setTimeout(step,Math.max(220,dur*1000+jitter));
+  }
+  function fadeSynth(target,sec,onDone){
+    if(!ctx||!master)return;
+    const now=ctx.currentTime;
+    master.gain.cancelScheduledValues(now);
+    master.gain.setValueAtTime(Math.max(.0001,master.gain.value),now);
+    master.gain.linearRampToValueAtTime(target,now+sec);
+    if(onDone)setTimeout(onDone,sec*1000+40);
+  }
+  function startSynth(){
+    if(!initSynth()){setUI(false);return}
+    if(ctx.state==='suspended')ctx.resume().catch(()=>{});
+    playing=true;
+    fadeSynth(.28,2.2);
+    clearTimeout(timer);
+    timer=setTimeout(step,350);
+  }
+  function pauseSynth(){
+    playing=false;clearTimeout(timer);
+    fadeSynth(.0001,.35,()=>{if(!playing&&ctx&&ctx.state==='running')ctx.suspend().catch(()=>{})});
+  }
+  function start(){
+    if(started)return;
+    started=true;muted=false;setUI(true);
+    if(CONFIG.music){
+      usingFile=true;
+      aud=new Audio(CONFIG.music);aud.loop=true;aud.volume=.25;
+      aud.onerror=()=>{usingFile=false;aud=null;if(!muted)startSynth()};
+      const p=aud.play();
+      if(p&&p.catch)p.catch(()=>{usingFile=false;aud=null;if(!muted)startSynth()});
+    }else startSynth();
+  }
+  function toggle(){
+    if(!started){start();return}
+    muted=!muted;setUI(!muted);
+    if(usingFile&&aud){if(muted)aud.pause();else aud.play().catch(()=>{})}
+    else{if(muted)pauseSynth();else startSynth()}
+  }
+  btn.onclick=toggle;
+  document.addEventListener('visibilitychange',()=>{
+    if(!started||muted)return;
+    if(document.hidden){
+      if(usingFile&&aud)aud.pause();else pauseSynth();
+    }else{
+      if(usingFile&&aud)aud.play().catch(()=>{});else startSynth();
+    }
+  });
+  return{start};
+})();
+
 /* open the doors */
 $('#seal').onclick=()=>{
+  BGM.start();
+  const el=document.documentElement,req=el.requestFullscreen||el.webkitRequestFullscreen;
+  if(req&&!document.fullscreenElement&&!document.webkitFullscreenElement){
+    try{const p=req.call(el);if(p&&p.catch)p.catch(()=>{})}catch(e){}
+  }
   $('#intro').classList.add('open');document.body.classList.remove('locked');
   burst(innerWidth/2,innerHeight/2,70);
   setTimeout(()=>document.body.classList.add('go'),500);
